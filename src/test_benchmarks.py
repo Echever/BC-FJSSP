@@ -152,7 +152,7 @@ def main(args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="FJJSP Solver")
+    parser = argparse.ArgumentParser(description="FJSSP Solver")
     parser.add_argument("--benchmark_folder", type=str, default="data/benchmarks/brandimarte", help="Path to benchmark folder")
     parser.add_argument("--model_path", type=str, default="models/model.pt", help="Path to trained model")
     parser.add_argument("--complex_model_path", type=str, default="models/model_complex.pkl", help="Path to complex model")

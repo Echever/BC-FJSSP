@@ -298,18 +298,4 @@ class FJSSPEnv(gym.Env):
         state[('machine', 'exec', 'job')].edge_attr = (2*(state[('machine', 'exec', 'job')].edge_attr - state[('machine', 'exec', 'job')].edge_attr.min())/(state[('machine', 'exec', 'job')].edge_attr.max() - state[('machine', 'exec', 'job')].edge_attr.min() + 1e-7 )-1).float()
         return state
     
-if __name__ == "__main__":
-
-    import json
-    with open('validation_set.json', 'r') as infile:
-        validation_set = json.load(infile)
-
-    val_env = CustomEnv(validation_set[0:1], 1, 3)
-    s = val_env.reset()
-
-    while True:
-        action = val_env.sample()
-        s, _, done, _ = val_env.step(action)
-        if done:
-            break
 
